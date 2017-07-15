@@ -3,14 +3,7 @@
         <div class="row">
 
             <div class="col-md-3">
-                <p class="lead">Etoile Sportive ALA</p>
-                <div class="list-group">
-                    <a href="#" class="list-group-item">Category Senior</a>
-                    <a href="#" class="list-group-item">Category Junior</a>
-                    <a href="#" class="list-group-item">Category Cadet</a>
-                    <a href="#" class="list-group-item">Category Minim</a>
-                    <a href="#" class="list-group-item">Category Ecole</a>
-                </div>
+               <%@include file="./shared/sidebar.jsp"%>
             </div>
 
             <div class="col-md-9">
@@ -26,13 +19,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="${images}/image1.jpg" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="${images}/image2.jpg" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="http://placehold.it/800x300" alt="">
+                                    <img class="slide-image" src="${images}/image1.jpg" alt="">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
