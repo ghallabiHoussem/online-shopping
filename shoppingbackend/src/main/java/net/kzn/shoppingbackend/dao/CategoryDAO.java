@@ -7,5 +7,6 @@ import net.kzn.shoppingbackend.dto.Category;
 public interface CategoryDAO {
 	
 	List<Category> list();
+	Category getById(long id);
 
 }

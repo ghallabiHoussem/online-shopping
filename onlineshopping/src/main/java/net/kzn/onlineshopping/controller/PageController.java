@@ -2,10 +2,12 @@ package net.kzn.onlineshopping.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import net.kzn.shoppingbackend.dao.CategoryDAO;
+import net.kzn.shoppingbackend.dto.Category;
 
 @Controller
 public class PageController {
@@ -18,6 +20,7 @@ public class PageController {
 		  
 		  ModelAndView mv = new ModelAndView("page");
 		  mv.addObject("title", "Home");
+		  mv.addObject("categories",categoryDAO.list() );
 		  mv.addObject("userClickHome", "true");
 		return mv;
 		  
@@ -48,8 +51,25 @@ public class PageController {
 	  public ModelAndView listProducts() {
 		  
 		  ModelAndView mv = new ModelAndView("page");
-		  mv.addObject("title", "Contact Us");
+		  mv.addObject("title", "All Products");
+		  mv.addObject("categories",categoryDAO.list());
 		  mv.addObject("userClickListProduct", "true");
+		return mv;
+		  
+	  }
+	  
+	  @RequestMapping(value= {"/listProducts/category/{id}"})
+	  public ModelAndView getCategoryByID(@PathVariable int id) {
+		  
+		  ModelAndView mv = new ModelAndView("page");
+		  Category category = new Category();
+		  
+		  category=categoryDAO.getById(id);
+		  
+		  mv.addObject("title", category.getName());
+		  mv.addObject("categories",categoryDAO.list());
+		  mv.addObject("category",category);
+		  mv.addObject("userClickOneProduct", "true");
 		return mv;
 		  
 	  }
