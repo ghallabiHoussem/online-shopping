@@ -20,7 +20,7 @@ public class PageController {
 		  
 		  ModelAndView mv = new ModelAndView("page");
 		  mv.addObject("title", "Home");
-		  mv.addObject("categories",categoryDAO.list() );
+		  mv.addObject("categories",categoryDAO.list());
 		  mv.addObject("userClickHome", "true");
 		return mv;
 		  
